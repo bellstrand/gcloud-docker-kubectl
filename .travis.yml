@@ -1,0 +1,16 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+script:
+  - VERSION=0.0.1
+  - REPO=bellstrand/gcloud-docker-kubectl;
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker build -f Dockerfile -t $REPO:$VERSION .;
+  - docker push $REPO:$VERSION ;
+
+notifications:
+  email: false
