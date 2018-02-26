@@ -28,5 +28,8 @@ RUN apk --no-cache add \
     gcloud --quiet components update && \
     gcloud --quiet components install kubectl && \
     gcloud --version
-    
+
+RUN curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose \
+    && chmod +x /usr/local/bin/docker-compose
+
 VOLUME ["/root/.config"]
