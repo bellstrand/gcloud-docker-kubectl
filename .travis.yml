@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - VERSION=0.0.6
+  - VERSION=0.0.7
   - REPO=bellstrand/gcloud-docker-kubectl;
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
   - docker build -f Dockerfile -t $REPO:$VERSION .;
